@@ -2,25 +2,12 @@ $(function(){
   $("#startCall").click(
     function(){
         $("#status").text("Starting AJAX download...");
-        $.ajax({url: "http://www.pomeeno.com/download/large.txt", success: function(result){
+        $.ajax({url: "http://www.pomeeno.com/download/medium.txt", success: function(result){
             $("#status").text("Completed AJAX download");
         }});
 
         checkForRequests(performTask);
     });
-
-    $("#startIFrameCall").click(
-      function(){
-          $("#status").text("Starting AJAX download...");
-          $.ajax({url: "http://www.pomeeno.com/download/large.txt", success: function(result){
-              $("#status").text("Completed AJAX download");
-          }});
-      });
-
-    $("#startAjaxStatus").click(
-        function(){
-            checkForRequests(performTask);
-        });
 });
 
 function performTask() {
